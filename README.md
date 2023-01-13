@@ -12,12 +12,12 @@ https://github.com/ellaflo/password-generator
 ## Installation
 N/A
 
-# Usage
+## Usage
 screenshopt of deployed link
 ![screenshopt of deployed link](Screenshot.png)
 
-# Credits
+## Credits
 N/A
 
-# License
+## License
 Please refer to the LICENSE in the repo.
