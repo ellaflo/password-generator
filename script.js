@@ -90,17 +90,19 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+  // variable to store length of password from user input
+let length = parseInt(prompt ("Set the amount of characters you would like your password to contain")) 
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+let randomIndex = Math.floor(Math.random () * arr.length);
+let randomElement = arr [randomIndex];
 }
 
 // Function to generate password with user input
 function generatePassword() {
-
+let options = getPasswordOptions();
 }
 
 // Get references to the #generate element
