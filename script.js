@@ -190,16 +190,15 @@ function generatePassword() {
 
   console.log(possibleCharacter);
 
+  for(let index = 0; index < guaranteedCharacter.length; index++) {
+       result.push(guaranteedCharacter[index]);
+     }
 
-  for(let index = 0; index < options.length; index++){
+  for(let index = guaranteedCharacter.length; index < options.length; index++){
     var generated = getRandom(possibleCharacter);
     console.log(generated);
     result.push(generated);
   }
-
-  // for(let index = 0; index < guaranteedCharacter.length; index++) {
-  //   result[index] = guaranteedCharacter[index]
-  // }
 
   console.log(result);
 
