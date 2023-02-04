@@ -95,8 +95,9 @@ const length = parseInt(
     prompt("How many characters would you like your password to contain?")
   )
 
+  // Validate inputs
   if(isNaN(length) === true){
-    alert(`Password length must be provided as number`);
+    alert(`Password length must be provided as a number`);
     return;
   }
 
@@ -110,41 +111,38 @@ const length = parseInt(
     return;
   }
 
-  let hasSpecialCharacters = confirm(
+  // Prompt user for type of charcters to include
+  const hasSpecialCharacters = confirm(
     "Click OK to confirm including special characters"
   )
-
-  let hasNumericCharacters = confirm(
+  const hasNumericCharacters = confirm(
     "Click OK to confirm including numeric characters"
   )
-
-  let hasLowerCasedCharacters = confirm(
+  const hasLowerCasedCharacters = confirm(
     "Click OK to confirm including lowercase characters"
   )
-
-  let hasUpperCasedCharacters = confirm(
+  const hasUpperCasedCharacters = confirm(
     "Click OK to confirm including uppercase characters"
   )
 
-  if(hasLowerCasedCharacters === false &&
-    hasUpperCasedCharacters === false &&
-    hasSpecialCharacters === false && 
-    hasNumericCharacters === false) {
+  // Validate user selection
+  if(!hasLowerCasedCharacters &&
+    !hasUpperCasedCharacters &&
+    !hasSpecialCharacters && 
+    !hasNumericCharacters) {
       alert(`Must select at least one character type`);
       return;
   }
 
-  let passwordOptions = {
-    length: length,
-    hasSpecialCharacters: hasSpecialCharacters,
-    hasUpperCasedCharacters: hasUpperCasedCharacters,
-    hasLowerCasedCharacters: hasLowerCasedCharacters,
-    hasNumericCharacters: hasNumericCharacters
-  }
-
-  return passwordOptions;
-
-}
+  //Return options as object
+  return {
+    length,
+    hasSpecialCharacters,
+    hasUpperCaseCharacters,
+    hasLowerCaseCharacters,
+    hasNumericCharacters,
+    };
+    };
 
 // Function for getting a random element from an array
 function getRandom(arr) {
