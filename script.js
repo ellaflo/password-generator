@@ -93,7 +93,7 @@ const getPasswordOptions = () => {
   // Prompt user to input password length
 const length = parseInt(
     prompt("How many characters would you like your password to contain?")
-  )
+  );
 
   // Validate inputs
   if(isNaN(length) === true){
@@ -138,8 +138,8 @@ const length = parseInt(
   return {
     length,
     hasSpecialCharacters,
-    hasUpperCaseCharacters,
-    hasLowerCaseCharacters,
+    hasUpperCasedCharacters,
+    hasLowerCasedCharacters,
     hasNumericCharacters,
     };
     };
