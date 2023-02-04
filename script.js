@@ -144,24 +144,20 @@ const length = parseInt(
     };
     };
 
-// Function for getting a random element from an array
-function getRandom(arr) {
-  let randomIndex = Math.floor(Math.random() * arr.length)
-  let randomElement = arr[randomIndex];
+// Function to get random element from an array
+const getRandom = arr => [Math.floor(Math.random() * arr.length)]
 
-  return randomElement;
-}
-
-// Function to generate password with user input
-function generatePassword() {
-  let options = getPasswordOptions();
+// Function to generate password based on options
+const generatePassword = () => {
+  // Get password options from user
+  const options = getPasswordOptions();
   console.log(options);
   
+  // Array to store possible charcters for password
+  let possibleCharacter = [];
+
   let result = []
-
-  let possibleCharacter = []
-
-
+  
   let guaranteedCharacter = []
 
 
@@ -193,7 +189,7 @@ function generatePassword() {
      }
 
   for(let index = guaranteedCharacter.length; index < options.length; index++){
-    var generated = getRandom(possibleCharacter);
+    let generated = getRandom(possibleCharacter);
     console.log(generated);
     result.push(generated);
   }
@@ -206,12 +202,12 @@ function generatePassword() {
 }
 
 // Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
+let generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
+  let password = generatePassword();
+  let passwordText = document.querySelector('#password');
 
   passwordText.value = password;
 }
